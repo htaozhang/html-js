@@ -151,7 +151,7 @@ function load_price_query_result(file, material_name, brand, spec, material_qual
 				html += "</tr>";
 			}
 
-			$("#result tbody").html(html);
+			$("#result tbody").append(html);
 		}
 	});	
 }
