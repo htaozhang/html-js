@@ -4,7 +4,7 @@ String.prototype.format=function()
 		return this;  
 
 	for (var s = this, i = 0; i < arguments.length; i++)  
-		s = s.replace(new RegExp("\\{"+i+"\\}","g"), arguments[i]);  
+		s = s.replace(new RegExp("\\{"+ i +"\\}", "g"), arguments[i]);  
 
   	return s;  
 }
@@ -151,7 +151,7 @@ function load_price_query_result(file, material_name, brand, spec, material_qual
 				html += "</tr>";
 			}
 
-			$("#result tbody").append(html);
+			$("#result tbody").html(html);
 		}
 	});	
 }
