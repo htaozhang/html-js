@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>建材信息数据查询系统</title>
+		<!-- @STYLE -->
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="papaparse.js"></script>
+	</head>
+    <body>
+    	<div class="floater"></div>
+
+        <div id="base">
+            <p style="text-align: center">信和集团成本管理部价格品牌数据源-品牌查询</p>
+            <p><br></p>
+
+            <form class="brand_query-form">
+                <p style="text-align: center">
+                    <label>材料名称：</label>
+                    <input type="text" id="material_name" value="请输入材料名称" onclick="if (this.value=='请输入材料名称'){this.value=''}" onblur="if (this.value==''){this.value='请输入材料名称'}"/>
+                </p>
+
+                <p style="text-align: center"> 
+                    <label>档次：</label>
+                    <label><input type="checkbox" name="level" value="高档" />高档</label>
+                    <label><input type="checkbox" name="level" value="中档" />中档</label>
+                    <label><input type="checkbox" name="level" value="低挡" />低档</label>
+                </p>
+                <p style="text-align: center">
+                    <label>数据源路径：</label>
+                    <input type="file" id="datasource" />
+                </p>
+                        
+                <p><br></p>
+                <p style="text-align: center"> 
+                    <input id="search" class="input_btn" type="button" onclick="brand_query()" value="查询" onMouseOver="this.style.backgroundColor='#385f9e'" onMouseOut="this.style.backgroundColor='#2f435e'"/>
+                </p>
+            </form>
+    	</div>
+                        
+        <table id="result" class="result_tb">
+            <caption><br><br>查询结果如下：</caption>
+            <thead>
+                <tr>
+                    <th>产品分类</th>
+                    <th>一级类别</th>
+                    <th>二级类别</th>
+                    <th>档次</th>
+                    <th>品牌</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        
+    </body>
+</html>

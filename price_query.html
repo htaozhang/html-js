@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>建材信息数据查询系统</title>
+		<!-- @STYLE -->
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="papaparse.js"></script>
+	</head>
+    <body>
+    	<div class="floater"></div>
+        <div id="base">
+            <p style="text-align: center">信和集团成本管理部价格品牌数据源-价格查询</p>
+            <p><br></p>    
+
+            <form class="brand_query-form">
+                <p style="text-align: center">
+                    <label>材料名称：</label>
+                    <input type="text" id="material_name" value="材料名称" onclick="if (this.value=='材料名称'){this.value=''}" onblur="if (this.value==''){this.value='材料名称'}"/>
+                    <label>品牌：</label>
+                    <input type="text" id="brand" value="品牌" onclick="if (this.value=='品牌'){this.value=''}" onblur="if (this.value==''){this.value='品牌'}"/>
+                </p>
+
+                <p style="text-align: center">
+                    <label>规格：</label>
+                    <input type="text" id="spec" value="规格" onclick="if (this.value=='规格'){this.value=''}" onblur="if (this.value==''){this.value='规格'}"/>
+                    <label>材质：</label>
+                    <input type="text" id="material_quality" value="材质" onclick="if (this.value=='材质'){this.value=''}" onblur="if (this.value==''){this.value='材质'}"/>
+                    <label>厂商：</label>
+                    <input type="text" id="firm" value="厂商" onclick="if (this.value=='厂商'){this.value=''}" onblur="if (this.value==''){this.value='厂商'}"/>
+                </p>
+
+                <p style="text-align: center">
+                    <label>数据源路径：</label>
+                    <input type="file" id="datasource" />
+                </p>
+
+                <p><br></p>
+                <p style="text-align: center"> 
+                    <input id="search" class="input_btn" type="button" onclick="price_query()" value="查询" onMouseOver="this.style.backgroundColor='#385f9e'" onMouseOut="this.style.backgroundColor='#2f435e'"/>
+                </p>
+            </form>
+
+    	</div>
+
+        <table id="result" class="result_tb">
+            <caption><br><br>查询结果如下：</caption>
+            <thead>
+                <tr>
+                    <th>bigtype</th>
+                    <th>smalltype</th>
+                    <th>材料名称</th>
+                    <th>品牌</th>
+                    <th>规格/型号/特征</th>
+                    <th>材质</th>
+                    <th>除税价(元)</th>
+                    <th>含税价(元)</th>
+                    <th>税率</th>
+                    <th>计量单位</th>
+                    <th>厂商</th>
+                    <th>联系电话</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </body>
+</html>
