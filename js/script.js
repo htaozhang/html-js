@@ -49,7 +49,7 @@ function load_brand_query_result(file, material_name, levels)
 			{
 				var item = data[i];
 
-				var name = data[i][0];
+				var name = data[i][2];
 				var flag1 = data[i][1];
 				var flag2 = data[i][2];
 				var level = data[i][3];
