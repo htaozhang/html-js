@@ -64,7 +64,7 @@ function load_brand_query_result(file, material_name, levels)
 						brand.push('<br>');
 				}
 
-				if (name != material_name || (levels.length > 0 && levels.indexOf(level) == -1))
+				if (name.indexOf(material_name) == -1 || (levels.length > 0 && levels.indexOf(level) == -1))
 					continue;
 
 				html += "<tr onmouseover=\"this.style.backgroundColor='#ffff66';\" onmouseout=\"this.style.backgroundColor='#d4e3e5';\">"
@@ -134,7 +134,7 @@ function load_price_query_result(file, material_name, brand, spec, material_qual
 				var material_quality_tmp = data[i][5];
 				var firm_tmp = data[i][10];
 
-				if (material_name.length > 0 && material_name != "材料名称" && material_name_tmp != material_name)
+				if (material_name.length > 0 && material_name != "材料名称" && material_name_tmp.indexOf(material_name) == -1)
 					continue;
 				if (brand.length > 0 && brand != "品牌" && brand_tmp != brand)
 					continue;
